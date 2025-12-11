@@ -140,3 +140,1554 @@
       background: rgba(255, 255, 255, 0.85);
       color: #0f172a;
     }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      resize: vertical;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.9);
+      color: #0f172a;
+    }
+
+    .inline-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .inline-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .buttons {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .status {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #16a34a;
+      min-height: 1em;
+    }
+
+    .entries-list {
+      max-height: 220px;
+      overflow-y: auto;
+      margin-top: 8px;
+    }
+
+    .entry-item {
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .entry-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .entry-mood {
+      font-size: 1rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .entry-item:hover {
+      background: #e5e7eb;
+    }
+
+    .entry-item.active {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .entry-item.active .entry-mood {
+      color: white;
+    }
+
+    .no-entries {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 8px;
+    }
+
+    .small-text {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      align-items: center;
+    }
+
+    .search-row input[type="text"] {
+      flex: 1;
+    }
+
+    .search-row button {
+      white-space: nowrap;
+    }
+
+    .auto-save-label {
+      font-size: 0.8rem;
+      color: #16a34a;
+    }
+
+    .backup-buttons {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Calendar styles */
+    .calendar-section {
+      margin-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .calendar-nav {
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.9rem;
+      background: #e5e7eb;
+      color: #0f172a;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calendar-month-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .calendar-grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      table-layout: fixed;
+    }
+
+    .calendar-grid th,
+    .calendar-grid td {
+      text-align: center;
+      padding: 3px 0;
+    }
+
+    .calendar-grid thead th {
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .calendar-cell {
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      height: 26px;
+      vertical-align: middle;
+    }
+
+    .calendar-cell.empty {
+      cursor: default;
+    }
+
+    .calendar-cell.has-entry::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent-color);
+    }
+
+    .calendar-cell.selected {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .calendar-cell:hover:not(.empty):not(.selected) {
+      background: #e5e7eb;
+    }
+
+    /* Mood stats */
+    .mood-stats {
+      margin-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+    }
+
+    .mood-stats-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .mood-stat-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+    }
+
+    .mood-stat-label span {
+      margin-left: 4px;
+    }
+
+    .mood-stat-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .mood-stat-bar-inner {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--accent-color);
+    }
+
+    .mood-stat-percent {
+      font-variant-numeric: tabular-nums;
+      color: #64748b;
+    }
+
+    /* Lock screen styles */
+    .lock-screen-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lock-card {
+      max-width: 380px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .lock-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .lock-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .lock-section {
+      margin-top: 10px;
+    }
+
+    .lock-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .lock-status {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      min-height: 1em;
+    }
+
+    .lock-status.error {
+      color: #dc2626;
+    }
+
+    .lock-status.ok {
+      color: #16a34a;
+    }
+  </style>
+</head>
+<body class="theme-light">
+  <!-- Lock screen -->
+  <div id="lockScreen" class="lock-screen-wrapper">
+    <div class="lock-card">
+      <div class="lock-title" id="lockTitle">🔐 My Personal Diary</div>
+      <div class="lock-subtitle" id="lockSubtitle">
+        Set a password to protect your diary.
+      </div>
+
+      <!-- Setup view (first time) -->
+      <div id="setupView" class="lock-section" style="display:none;">
+        <label for="setupPassword" id="setupPasswordLabel">Create password</label>
+        <input type="password" id="setupPassword" autocomplete="new-password" />
+
+        <label for="setupPasswordConfirm" id="setupConfirmLabel" style="margin-top:8px;">Confirm password</label>
+        <input type="password" id="setupPasswordConfirm" autocomplete="new-password" />
+
+        <div class="small-text" id="lockSetupHelp">
+          This is stored only on this browser. If you forget it, you can reset by clearing your browser storage for this page,
+          but you’ll also lose your diary entries.
+        </div>
+
+        <div class="lock-buttons">
+          <button class="btn-primary" id="setupSaveBtn">Save password</button>
+        </div>
+      </div>
+
+      <!-- Login view (after password exists) -->
+      <div id="loginView" class="lock-section" style="display:none;">
+        <label for="loginPassword" id="loginPasswordLabel">Enter password</label>
+        <input type="password" id="loginPassword" autocomplete="current-password" />
+
+        <div class="lock-buttons">
+          <button class="btn-primary" id="loginBtn">Unlock diary</button>
+        </div>
+
+        <div class="small-text" id="lockLoginHelp">
+          If you truly forget your password, you can clear this site’s data in your browser settings.
+          That will remove the password and all diary entries.
+        </div>
+      </div>
+
+      <div id="lockStatus" class="lock-status"></div>
+    </div>
+  </div>
+
+  <!-- Main diary app (hidden until unlocked) -->
+  <div id="appContainer" style="display:none;">
+    <div class="app">
+      <h1 id="appTitle">My Personal Diary</h1>
+      <div class="subtitle" id="appSubtitle">A private space just for your thoughts ✨</div>
+
+      <div class="top-controls">
+        <div class="theme-controls">
+          <label for="themeSelect" id="themeLabel">Theme</label>
+          <select id="themeSelect">
+            <option value="light">Light</option>
+            <option value="cozy">Cozy</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div class="auto-save-label" id="autoSaveLabel">Auto-save: on</div>
+          <select id="langSelect" style="padding:4px 8px; border-radius:999px; border:1px solid #cbd5e1; font-size:0.85rem;">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="layout">
+        <!-- Left: editor -->
+        <div class="card">
+          <div>
+            <label for="dateInput" id="labelDate">Choose a date</label><br />
+            <input type="date" id="dateInput" />
+          </div>
+
+          <div class="inline-row">
+            <div>
+              <label for="moodSelect" id="labelMood">Mood</label>
+              <select id="moodSelect">
+                <option value="">(no mood)</option>
+                <option value="very_happy">😄 Very happy</option>
+                <option value="happy">😊 Happy</option>
+                <option value="calm">🙂 Calm</option>
+                <option value="neutral">😐 Neutral</option>
+                <option value="tired">😴 Tired</option>
+                <option value="worried">😟 Worried</option>
+                <option value="sad">😢 Sad</option>
+                <option value="angry">😡 Angry</option>
+                <option value="grateful">🙏 Grateful</option>
+              </select>
+            </div>
+            <div>
+              <label for="tagsInput" id="labelTags">Tags</label>
+              <input
+                type="text"
+                id="tagsInput"
+                placeholder="e.g. treatment, work, family"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="entryText" id="labelEntry" style="margin-top:10px; display:block;">Today's entry</label>
+            <textarea id="entryText" placeholder="Write anything you like..."></textarea>
+          </div>
+
+          <div class="buttons">
+            <button class="btn-primary" id="saveBtn" type="button">Save entry</button>
+            <button class="btn-secondary" id="clearBtn" type="button">Clear text</button>
+            <button class="btn-secondary" id="voiceBtn" type="button">🎙️ Dictate</button>
+          </div>
+
+          <div class="status" id="statusText"></div>
+          <div class="small-text">
+            All diary entries (text, mood, tags) are stored only in this browser using local storage.
+          </div>
+        </div>
+
+        <!-- Right: entries list + search + calendar + stats -->
+        <div class="card">
+          <strong id="pastEntriesTitle">Past entries</strong>
+          <div class="small-text" id="pastEntriesHelp">
+            Search by text or tags. Leave empty to see everything.
+          </div>
+
+          <div class="search-row">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search (e.g. 'treatment', 'energy', 'teaching')"
+            />
+            <button class="btn-secondary" id="clearSearchBtn" type="button">Clear</button>
+          </div>
+
+          <div id="entriesList" class="entries-list"></div>
+
+          <button class="btn-danger" id="deleteAllBtn" style="margin-top:10px;" type="button">
+            Delete all entries
+          </button>
+          <div class="small-text" id="deleteAllHelp">
+            ⚠️ This will permanently delete everything from this browser.
+          </div>
+
+          <div class="backup-buttons">
+            <button class="btn-secondary" id="exportJsonBtn" type="button">Export JSON</button>
+            <button class="btn-secondary" id="exportTextBtn" type="button">Export text</button>
+            <button class="btn-secondary" id="importJsonBtn" type="button">Import JSON</button>
+            <input type="file" id="importJsonInput" accept="application/json" style="display:none" />
+          </div>
+          <div class="small-text" id="backupHelp">
+            Use export to create a backup file you can store safely, and import JSON to restore or sync from that backup (e.g. from OneDrive).
+          </div>
+
+          <div class="calendar-section">
+            <div class="calendar-header">
+              <button class="calendar-nav" id="prevMonthBtn" type="button">‹</button>
+              <span class="calendar-month-label" id="calendarMonthLabel"></span>
+              <button class="calendar-nav" id="nextMonthBtn" type="button">›</button>
+            </div>
+            <table class="calendar-grid">
+              <thead>
+                <tr>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                  <th>Sun</th>
+                </tr>
+              </thead>
+              <tbody id="calendarBody"></tbody>
+            </table>
+          </div>
+
+          <div class="mood-stats">
+            <div class="mood-stats-title" id="moodStatsTitle">Mood statistics</div>
+            <div id="moodStatsContainer" class="mood-stats-body small-text">
+              No mood data yet.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "myPersonalDiaryEntries";
+    const PASSWORD_KEY = "myPersonalDiaryPassword";
+    const THEME_KEY = "myDiaryTheme";
+    const LANG_KEY = "myDiaryLang";
+    let currentSearchQuery = "";
+    let currentCalendarDate = null;
+    let autoSaveTimer = null;
+
+    const translations = {
+      en: {
+        docTitle: "My Personal Diary (Locked)",
+        appTitle: "My Personal Diary",
+        appSubtitle: "A private space just for your thoughts ✨",
+
+        lockTitle: "🔐 My Personal Diary",
+        lockSetupSubtitle: "Set a password to protect your diary.",
+        lockLoginSubtitle: "Enter your password to unlock your diary.",
+        setupPasswordLabel: "Create password",
+        setupConfirmLabel: "Confirm password",
+        lockSetupHelp:
+          "This is stored only on this browser. If you forget it, you can reset by clearing this page's data, but you’ll also lose your diary entries.",
+        loginPasswordLabel: "Enter password",
+        lockLoginHelp:
+          "If you truly forget your password, you can clear this site’s data in your browser settings. That will remove the password and all diary entries.",
+
+        themeLabel: "Theme",
+        autoSaveLabel: "Auto-save: on",
+
+        labelDate: "Choose a date",
+        labelMood: "Mood",
+        labelTags: "Tags",
+        labelEntry: "Today's entry",
+
+        saveBtn: "Save entry",
+        clearBtn: "Clear text",
+        voiceBtn: "🎙️ Dictate",
+
+        pastEntriesTitle: "Past entries",
+        pastEntriesHelp: "Search by text or tags. Leave empty to see everything.",
+        deleteAllBtn: "Delete all entries",
+        deleteAllHelp: "⚠️ This will permanently delete everything from this browser.",
+        exportJsonBtn: "Export JSON",
+        exportTextBtn: "Export text",
+        importJsonBtn: "Import JSON",
+        backupHelp:
+          "Use export to create a backup file you can store safely, and import JSON to restore or sync from that backup (e.g. from OneDrive).",
+
+        searchPlaceholder: "Search (e.g. 'treatment', 'energy', 'teaching')",
+
+        moodStatsTitle: "Mood statistics",
+        moodStatsEmpty: "No mood data yet.",
+
+        weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+
+        moodVeryHappy: "😄 Very happy",
+        moodHappy: "😊 Happy",
+        moodCalm: "🙂 Calm",
+        moodNeutral: "😐 Neutral",
+        moodTired: "😴 Tired",
+        moodWorried: "😟 Worried",
+        moodSad: "😢 Sad",
+        moodAngry: "😡 Angry",
+        moodGrateful: "🙏 Grateful"
+      },
+      zh: {
+        docTitle: "我的私人日记（已加锁）",
+        appTitle: "我的私人日记",
+        appSubtitle: "只属于你自己的安静空间 ✨",
+
+        lockTitle: "🔐 我的私人日记",
+        lockSetupSubtitle: "为你的日记设置一个密码。",
+        lockLoginSubtitle: "请输入密码解锁你的日记。",
+        setupPasswordLabel: "创建密码",
+        setupConfirmLabel: "确认密码",
+        lockSetupHelp:
+          "密码只保存在本浏览器中。如果忘记密码，可以在浏览器中清除本页面的数据，但这会同时删除所有日记内容。",
+        loginPasswordLabel: "输入密码",
+        lockLoginHelp:
+          "如果真的忘记密码，可以在浏览器设置中清除本网站的数据，这会同时移除密码和所有日记内容。",
+
+        themeLabel: "主题",
+        autoSaveLabel: "自动保存：已开启",
+
+        labelDate: "选择日期",
+        labelMood: "心情",
+        labelTags: "标签",
+        labelEntry: "今日内容",
+
+        saveBtn: "保存",
+        clearBtn: "清空",
+        voiceBtn: "🎙️ 语音输入",
+
+        pastEntriesTitle: "以往日记",
+        pastEntriesHelp: "可以按文字或标签搜索，留空则显示全部日记。",
+        deleteAllBtn: "删除全部日记",
+        deleteAllHelp: "⚠️ 此操作会永久删除本浏览器中的所有日记。",
+        exportJsonBtn: "导出 JSON",
+        exportTextBtn: "导出文本",
+        importJsonBtn: "导入 JSON",
+        backupHelp:
+          "可以导出到 OneDrive 等位置备份，也可以在其他设备上导入 JSON 文件进行同步。",
+
+        searchPlaceholder: "搜索（例如：治疗、精力、教学…）",
+
+        moodStatsTitle: "心情统计",
+        moodStatsEmpty: "还没有心情数据。",
+
+        weekdays: ["一", "二", "三", "四", "五", "六", "日"],
+
+        moodVeryHappy: "😄 非常开心",
+        moodHappy: "😊 开心",
+        moodCalm: "🙂 平静",
+        moodNeutral: "😐 一般",
+        moodTired: "😴 疲惫",
+        moodWorried: "😟 担心",
+        moodSad: "😢 难过",
+        moodAngry: "😡 生气",
+        moodGrateful: "🙏 感恩"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      const $ = (id) => document.getElementById(id);
+
+      document.title = t.docTitle;
+
+      if ($("appTitle")) $("appTitle").textContent = t.appTitle;
+      if ($("appSubtitle")) $("appSubtitle").textContent = t.appSubtitle;
+
+      if ($("lockTitle")) $("lockTitle").textContent = t.lockTitle;
+      if ($("setupPasswordLabel")) $("setupPasswordLabel").textContent = t.setupPasswordLabel;
+      if ($("setupConfirmLabel")) $("setupConfirmLabel").textContent = t.setupConfirmLabel;
+      if ($("lockSetupHelp")) $("lockSetupHelp").textContent = t.lockSetupHelp;
+      if ($("loginPasswordLabel")) $("loginPasswordLabel").textContent = t.loginPasswordLabel;
+      if ($("lockLoginHelp")) $("lockLoginHelp").textContent = t.lockLoginHelp;
+
+      if ($("themeLabel")) $("themeLabel").textContent = t.themeLabel;
+      if ($("autoSaveLabel")) $("autoSaveLabel").textContent = t.autoSaveLabel;
+
+      if ($("labelDate")) $("labelDate").textContent = t.labelDate;
+      if ($("labelMood")) $("labelMood").textContent = t.labelMood;
+      if ($("labelTags")) $("labelTags").textContent = t.labelTags;
+      if ($("labelEntry")) $("labelEntry").textContent = t.labelEntry;
+
+      if ($("saveBtn")) $("saveBtn").textContent = t.saveBtn;
+      if ($("clearBtn")) $("clearBtn").textContent = t.clearBtn;
+      if ($("voiceBtn")) $("voiceBtn").textContent = t.voiceBtn;
+
+      if ($("pastEntriesTitle")) $("pastEntriesTitle").textContent = t.pastEntriesTitle;
+      if ($("pastEntriesHelp")) $("pastEntriesHelp").textContent = t.pastEntriesHelp;
+      if ($("deleteAllBtn")) $("deleteAllBtn").textContent = t.deleteAllBtn;
+      if ($("deleteAllHelp")) $("deleteAllHelp").textContent = t.deleteAllHelp;
+      if ($("exportJsonBtn")) $("exportJsonBtn").textContent = t.exportJsonBtn;
+      if ($("exportTextBtn")) $("exportTextBtn").textContent = t.exportTextBtn;
+      if ($("importJsonBtn")) $("importJsonBtn").textContent = t.importJsonBtn;
+      if ($("backupHelp")) $("backupHelp").textContent = t.backupHelp;
+
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+
+      if ($("moodStatsTitle")) $("moodStatsTitle").textContent = t.moodStatsTitle;
+
+      // If mood stats container is showing the "empty" message, update it
+      const moodStatsContainer = $("moodStatsContainer");
+      if (moodStatsContainer && !moodStatsContainer.dataset.hasData) {
+        moodStatsContainer.textContent = t.moodStatsEmpty;
+      }
+
+      // Calendar weekday headers
+      const headerRow = document.querySelector(".calendar-grid thead tr");
+      if (headerRow && t.weekdays) {
+        const ths = headerRow.querySelectorAll("th");
+        t.weekdays.forEach((label, idx) => {
+          if (ths[idx]) ths[idx].textContent = label;
+        });
+      }
+
+      // Mood dropdown options (just the text)
+      const moodSelect = document.getElementById("moodSelect");
+      if (moodSelect) {
+        const opts = moodSelect.options;
+        for (let i = 0; i < opts.length; i++) {
+          switch (opts[i].value) {
+            case "very_happy":
+              opts[i].textContent = t.moodVeryHappy;
+              break;
+            case "happy":
+              opts[i].textContent = t.moodHappy;
+              break;
+            case "calm":
+              opts[i].textContent = t.moodCalm;
+              break;
+            case "neutral":
+              opts[i].textContent = t.moodNeutral;
+              break;
+            case "tired":
+              opts[i].textContent = t.moodTired;
+              break;
+            case "worried":
+              opts[i].textContent = t.moodWorried;
+              break;
+            case "sad":
+              opts[i].textContent = t.moodSad;
+              break;
+            case "angry":
+              opts[i].textContent = t.moodAngry;
+              break;
+            case "grateful":
+              opts[i].textContent = t.moodGrateful;
+              break;
+          }
+        }
+      }
+    }
+
+    /* ===== Mood helpers ===== */
+    function moodToEmoji(mood) {
+      switch (mood) {
+        case "very_happy": return "😄";
+        case "happy": return "😊";
+        case "calm": return "🙂";
+        case "neutral": return "😐";
+        case "tired": return "😴";
+        case "worried": return "😟";
+        case "sad": return "😢";
+        case "angry": return "😡";
+        case "grateful": return "🙏";
+        default: return "";
+      }
+    }
+
+    function moodToLabel(mood, lang) {
+      const t = translations[lang || (localStorage.getItem(LANG_KEY) || "en")] || translations.en;
+      switch (mood) {
+        case "very_happy": return t.moodVeryHappy.replace("😄", "").trim();
+        case "happy": return t.moodHappy.replace("😊", "").trim();
+        case "calm": return t.moodCalm.replace("🙂", "").trim();
+        case "neutral": return t.moodNeutral.replace("😐", "").trim();
+        case "tired": return t.moodTired.replace("😴", "").trim();
+        case "worried": return t.moodWorried.replace("😟", "").trim();
+        case "sad": return t.moodSad.replace("😢", "").trim();
+        case "angry": return t.moodAngry.replace("😡", "").trim();
+        case "grateful": return t.moodGrateful.replace("🙏", "").trim();
+        default: return "";
+      }
+    }
+
+    /* ===== Theme handling ===== */
+    function applyTheme(theme) {
+      const t = theme || "light";
+      document.body.classList.remove("theme-light", "theme-cozy", "theme-dark");
+      document.body.classList.add("theme-" + t);
+      const select = document.getElementById("themeSelect");
+      if (select) select.value = t;
+      localStorage.setItem(THEME_KEY, t);
+    }
+
+    /* ===== Diary storage ===== */
+    function loadEntries() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return {};
+        return JSON.parse(raw) || {};
+      } catch (e) {
+        console.error("Error reading entries:", e);
+        return {};
+      }
+    }
+
+    function saveEntries(entries) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    }
+
+    function normalizeEntry(rawEntry) {
+      if (rawEntry === undefined || rawEntry === null) {
+        return { text: "", mood: "", tags: [] };
+      }
+      if (typeof rawEntry === "string") {
+        return { text: rawEntry, mood: "", tags: [] };
+      }
+      if (typeof rawEntry === "object") {
+        return {
+          text: rawEntry.text || "",
+          mood: rawEntry.mood || "",
+          tags: Array.isArray(rawEntry.tags) ? rawEntry.tags : [],
+        };
+      }
+      return { text: "", mood: "", tags: [] };
+    }
+
+    function formatDateForDisplay(dateStr) {
+      if (!dateStr) return "";
+      const [year, month, day] = dateStr.split("-");
+      return `${day}/${month}/${year}`;
+    }
+
+    function refreshEntriesList(selectedDate) {
+      const entries = loadEntries();
+      const listEl = document.getElementById("entriesList");
+      listEl.innerHTML = "";
+
+      const dates = Object.keys(entries).sort();
+      const query = (currentSearchQuery || "").trim().toLowerCase();
+
+      const filteredDates = dates.filter(date => {
+        if (!query) return true;
+        const entry = normalizeEntry(entries[date]);
+        const tagsText = (entry.tags || []).join(" ");
+        const haystack = `${entry.text} ${tagsText}`.toLowerCase();
+        return haystack.includes(query);
+      });
+
+      if (filteredDates.length === 0) {
+        const emptyMsg = document.createElement("div");
+        emptyMsg.className = "no-entries";
+        const lang = localStorage.getItem(LANG_KEY) || "en";
+        if (query) {
+          emptyMsg.textContent = lang === "zh"
+            ? "没有符合搜索条件的日记。"
+            : "No entries match your search.";
+        } else {
+          emptyMsg.textContent = lang === "zh"
+            ? "还没有日记记录，可以先写一篇然后点击保存。"
+            : "No entries yet. Start by writing something and clicking Save.";
+        }
+        listEl.appendChild(emptyMsg);
+        return;
+      }
+
+      filteredDates.forEach(date => {
+        const rawEntry = entries[date];
+        const entry = normalizeEntry(rawEntry);
+        const moodIcon = moodToEmoji(entry.mood);
+
+        const item = document.createElement("div");
+        item.className = "entry-item" + (date === selectedDate ? " active" : "");
+
+        const left = document.createElement("div");
+        left.className = "entry-left";
+
+        const moodSpan = document.createElement("span");
+        moodSpan.className = "entry-mood";
+        moodSpan.textContent = moodIcon || "";
+
+        const dateSpan = document.createElement("span");
+        dateSpan.textContent = formatDateForDisplay(date);
+
+        left.appendChild(moodSpan);
+        left.appendChild(dateSpan);
+        item.appendChild(left);
+
+        item.addEventListener("click", () => {
+          const dateInput = document.getElementById("dateInput");
+          const textArea = document.getElementById("entryText");
+          const moodSelect = document.getElementById("moodSelect");
+          const tagsInput = document.getElementById("tagsInput");
+
+          dateInput.value = date;
+
+          const e = normalizeEntry(entries[date]);
+          textArea.value = e.text || "";
+          moodSelect.value = e.mood || "";
+          tagsInput.value = e.tags && e.tags.length ? e.tags.join(", ") : "";
+
+          showStatus(`Loaded entry for ${formatDateForDisplay(date)}.`, false);
+          refreshEntriesList(date);
+          renderCalendar(date);
+        });
+
+        listEl.appendChild(item);
+      });
+    }
+
+    function showStatus(message, isError = false) {
+      const statusEl = document.getElementById("statusText");
+      statusEl.style.color = isError ? "#dc2626" : "#16a34a";
+      statusEl.textContent = message;
+      if (message) {
+        setTimeout(() => {
+          if (statusEl.textContent === message) {
+            statusEl.textContent = "";
+          }
+        }, 2500);
+      }
+    }
+
+    /* ===== Mood statistics ===== */
+    function renderMoodStats() {
+      const container = document.getElementById("moodStatsContainer");
+      const entries = loadEntries();
+      const dates = Object.keys(entries);
+      const counts = {};
+      let total = 0;
+
+      dates.forEach(date => {
+        const entry = normalizeEntry(entries[date]);
+        if (entry.mood) {
+          counts[entry.mood] = (counts[entry.mood] || 0) + 1;
+          total++;
+        }
+      });
+
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+      const t = translations[lang] || translations.en;
+
+      container.innerHTML = "";
+      if (total === 0) {
+        container.textContent = t.moodStatsEmpty;
+        container.dataset.hasData = "";
+        return;
+      }
+
+      container.dataset.hasData = "true";
+
+      Object.keys(counts)
+        .sort((a, b) => counts[b] - counts[a])
+        .forEach(mood => {
+          const count = counts[mood];
+          const percent = Math.round((count * 100) / total);
+          const row = document.createElement("div");
+          row.className = "mood-stat-row";
+
+          const label = document.createElement("div");
+          label.className = "mood-stat-label";
+          label.innerHTML = `${moodToEmoji(mood)} <span>${moodToLabel(mood, lang)}</span>`;
+
+          const bar = document.createElement("div");
+          bar.className = "mood-stat-bar";
+          const inner = document.createElement("div");
+          inner.className = "mood-stat-bar-inner";
+          inner.style.width = `${percent}%`;
+          bar.appendChild(inner);
+
+          const pct = document.createElement("div");
+          pct.className = "mood-stat-percent";
+          pct.textContent = `${percent}% (${count})`;
+
+          row.appendChild(label);
+          row.appendChild(bar);
+          row.appendChild(pct);
+          container.appendChild(row);
+        });
+    }
+
+    /* ===== Calendar ===== */
+    function renderCalendar(selectedDateStr) {
+      const body = document.getElementById("calendarBody");
+      const label = document.getElementById("calendarMonthLabel");
+      const entries = loadEntries();
+
+      if (!currentCalendarDate) {
+        const today = new Date();
+        currentCalendarDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      }
+
+      const year = currentCalendarDate.getFullYear();
+      const month = currentCalendarDate.getMonth();
+      label.textContent = currentCalendarDate.toLocaleString(undefined, {
+        month: "long",
+        year: "numeric",
+      });
+
+      body.innerHTML = "";
+
+      const firstDay = new Date(year, month, 1);
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      let startOffset = (firstDay.getDay() + 6) % 7; // Mon=0
+      let day = 1;
+
+      for (let week = 0; week < 6; week++) {
+        const tr = document.createElement("tr");
+        for (let dow = 0; dow < 7; dow++) {
+          const td = document.createElement("td");
+          td.className = "calendar-cell";
+
+          if ((week === 0 && dow < startOffset) || day > daysInMonth) {
+            td.classList.add("empty");
+            td.textContent = "";
+          } else {
+            const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+            td.textContent = day;
+
+            const rawEntry = entries[dateStr];
+            const entry = rawEntry ? normalizeEntry(rawEntry) : null;
+            if (entry && (entry.text || entry.mood || (entry.tags && entry.tags.length))) {
+              td.classList.add("has-entry");
+            }
+            if (dateStr === selectedDateStr) {
+              td.classList.add("selected");
+            }
+
+            td.addEventListener("click", () => {
+              const dateInput = document.getElementById("dateInput");
+              const textArea = document.getElementById("entryText");
+              const moodSelect = document.getElementById("moodSelect");
+              const tagsInput = document.getElementById("tagsInput");
+
+              dateInput.value = dateStr;
+              const entriesNow = loadEntries();
+              const e = normalizeEntry(entriesNow[dateStr]);
+              textArea.value = e.text || "";
+              moodSelect.value = e.mood || "";
+              tagsInput.value = e.tags && e.tags.length ? e.tags.join(", ") : "";
+
+              refreshEntriesList(dateStr);
+              renderCalendar(dateStr);
+              showStatus(`Loaded entry for ${formatDateForDisplay(dateStr)}.`, false);
+            });
+
+            day++;
+          }
+          tr.appendChild(td);
+        }
+        body.appendChild(tr);
+        if (day > daysInMonth) break;
+      }
+    }
+
+    /* ===== Backup / export / import ===== */
+    function downloadFile(filename, content, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportJsonBackup() {
+      const entries = loadEntries();
+      const data = JSON.stringify(entries, null, 2);
+      const now = new Date();
+      const stamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}-${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}`;
+      const name = `diary-backup-${stamp}.json`;
+      downloadFile(name, data, "application/json");
+      showStatus("Exported JSON backup.", false);
+    }
+
+    function exportTextBackup() {
+      const entries = loadEntries();
+      const dates = Object.keys(entries).sort();
+      let lines = [];
+
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+
+      dates.forEach(date => {
+        const e = normalizeEntry(entries[date]);
+        const moodLabel = e.mood ? moodToLabel(e.mood, lang) : (lang === "zh" ? "无" : "None");
+        const tagsText = e.tags && e.tags.length ? e.tags.join(", ") : (lang === "zh" ? "无" : "None");
+        lines.push(
+          "==== " + date + " (" + formatDateForDisplay(date) + ") ====",
+          (lang === "zh" ? "心情: " : "Mood: ") + moodLabel,
+          (lang === "zh" ? "标签: " : "Tags: ") + tagsText,
+          "",
+          e.text || "",
+          ""
+        );
+      });
+
+      const text = lines.join("\n");
+      const now = new Date();
+      const stamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}-${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}`;
+      const name = `diary-backup-${stamp}.txt`;
+      downloadFile(name, text, "text/plain");
+      showStatus("Exported text backup.", false);
+    }
+
+    function importJsonBackupFromFile(file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const text = event.target.result;
+          const imported = JSON.parse(text);
+
+          if (!imported || typeof imported !== "object") {
+            showStatus("Invalid JSON file for import.", true);
+            return;
+          }
+
+          const current = loadEntries();
+          const merged = { ...current, ...imported };
+          saveEntries(merged);
+
+          const dateInput = document.getElementById("dateInput");
+          const currentDate = dateInput ? dateInput.value : null;
+
+          refreshEntriesList(currentDate || undefined);
+          renderCalendar(currentDate || undefined);
+          renderMoodStats();
+
+          showStatus("Imported entries from JSON backup.", false);
+        } catch (e) {
+          console.error("Import error:", e);
+          showStatus("Failed to import JSON backup.", true);
+        }
+      };
+      reader.onerror = () => {
+        showStatus("Could not read the file.", true);
+      };
+      reader.readAsText(file);
+    }
+
+    /* ===== Auto-save ===== */
+    function saveCurrentEntry(options = { auto: false }) {
+      const dateInput = document.getElementById("dateInput");
+      const textArea = document.getElementById("entryText");
+      const moodSelect = document.getElementById("moodSelect");
+      const tagsInput = document.getElementById("tagsInput");
+
+      const date = dateInput.value;
+      const text = textArea.value;
+      const mood = moodSelect.value || "";
+      const tagsRaw = tagsInput.value || "";
+
+      if (!date) {
+        if (!options.auto) {
+          const lang = localStorage.getItem(LANG_KEY) || "en";
+          showStatus(
+            lang === "zh" ? "请先选择日期。" : "Please choose a date before saving.",
+            true
+          );
+        }
+        return;
+      }
+
+      const tags = tagsRaw
+        .split(",")
+        .map(t => t.trim())
+        .filter(t => t.length > 0);
+
+      const entries = loadEntries();
+      entries[date] = { text, mood, tags };
+      saveEntries(entries);
+
+      refreshEntriesList(date);
+      renderCalendar(date);
+      renderMoodStats();
+
+      if (options.auto) {
+        const lang = localStorage.getItem(LANG_KEY) || "en";
+        showStatus(lang === "zh" ? "已自动保存。" : "Auto-saved.", false);
+      } else {
+        showStatus(`Saved entry for ${formatDateForDisplay(date)}.`, false);
+      }
+    }
+
+    function scheduleAutoSave() {
+      if (autoSaveTimer) clearTimeout(autoSaveTimer);
+      autoSaveTimer = setTimeout(() => {
+        saveCurrentEntry({ auto: true });
+      }, 1200);
+    }
+
+    /* ===== Diary app init ===== */
+    function initDiaryApp() {
+      const dateInput = document.getElementById("dateInput");
+      const textArea = document.getElementById("entryText");
+      const moodSelect = document.getElementById("moodSelect");
+      const tagsInput = document.getElementById("tagsInput");
+      const saveBtn = document.getElementById("saveBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const deleteAllBtn = document.getElementById("deleteAllBtn");
+      const searchInput = document.getElementById("searchInput");
+      const clearSearchBtn = document.getElementById("clearSearchBtn");
+      const exportJsonBtn = document.getElementById("exportJsonBtn");
+      const exportTextBtn = document.getElementById("exportTextBtn");
+      const importJsonBtn = document.getElementById("importJsonBtn");
+      const importJsonInput = document.getElementById("importJsonInput");
+      const prevMonthBtn = document.getElementById("prevMonthBtn");
+      const nextMonthBtn = document.getElementById("nextMonthBtn");
+      const voiceBtn = document.getElementById("voiceBtn");
+
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const dd = String(today.getDate()).padStart(2, "0");
+      const todayStr = `${yyyy}-${mm}-${dd}`;
+      dateInput.value = todayStr;
+
+      const entries = loadEntries();
+      const todayEntry = normalizeEntry(entries[todayStr]);
+      textArea.value = todayEntry.text || "";
+      moodSelect.value = todayEntry.mood || "";
+      tagsInput.value = todayEntry.tags && todayEntry.tags.length
+        ? todayEntry.tags.join(", ")
+        : "";
+
+      currentCalendarDate = new Date(today.getFullYear(), today.getMonth(), 1);
+
+      refreshEntriesList(todayStr);
+      renderCalendar(todayStr);
+      renderMoodStats();
+
+      saveBtn.addEventListener("click", () => {
+        saveCurrentEntry({ auto: false });
+      });
+
+      clearBtn.addEventListener("click", () => {
+        textArea.value = "";
+        moodSelect.value = "";
+        tagsInput.value = "";
+        const lang = localStorage.getItem(LANG_KEY) || "en";
+        showStatus(
+          lang === "zh"
+            ? "已清空文字、心情和标签。如需保持为空，请记得保存。"
+            : "Cleared text, mood, and tags. Don't forget to save if you want it blank.",
+        false);
+      });
+
+      deleteAllBtn.addEventListener("click", () => {
+        const lang = localStorage.getItem(LANG_KEY) || "en";
+        const really = confirm(
+          lang === "zh"
+            ? "确定要删除所有日记吗？此操作无法恢复。"
+            : "Are you sure you want to delete ALL diary entries?"
+        );
+        if (!really) return;
+        localStorage.removeItem(STORAGE_KEY);
+        textArea.value = "";
+        moodSelect.value = "";
+        tagsInput.value = "";
+        refreshEntriesList(dateInput.value);
+        renderCalendar(dateInput.value);
+        renderMoodStats();
+        showStatus(
+          lang === "zh" ? "已删除所有日记。" : "All entries deleted.",
+          false
+        );
+      });
+
+      dateInput.addEventListener("change", () => {
+        const date = dateInput.value;
+        const entriesNow = loadEntries();
+        const entry = normalizeEntry(entriesNow[date]);
+        textArea.value = entry.text || "";
+        moodSelect.value = entry.mood || "";
+        tagsInput.value = entry.tags && entry.tags.length
+          ? entry.tags.join(", ")
+          : "";
+        refreshEntriesList(date);
+        renderCalendar(date);
+      });
+
+      textArea.addEventListener("input", scheduleAutoSave);
+      moodSelect.addEventListener("change", scheduleAutoSave);
+      tagsInput.addEventListener("input", scheduleAutoSave);
+
+      searchInput.addEventListener("input", () => {
+        currentSearchQuery = searchInput.value || "";
+        refreshEntriesList(dateInput.value);
+      });
+
+      clearSearchBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        currentSearchQuery = "";
+        refreshEntriesList(dateInput.value);
+      });
+
+      exportJsonBtn.addEventListener("click", exportJsonBackup);
+      exportTextBtn.addEventListener("click", exportTextBackup);
+
+      importJsonBtn.addEventListener("click", () => {
+        importJsonInput.click();
+      });
+
+      importJsonInput.addEventListener("change", () => {
+        const file = importJsonInput.files && importJsonInput.files[0];
+        if (file) {
+          importJsonBackupFromFile(file);
+        }
+        importJsonInput.value = "";
+      });
+
+      prevMonthBtn.addEventListener("click", () => {
+        if (!currentCalendarDate) {
+          currentCalendarDate = new Date();
+        }
+        currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+        renderCalendar(dateInput.value);
+      });
+
+      nextMonthBtn.addEventListener("click", () => {
+        if (!currentCalendarDate) {
+          currentCalendarDate = new Date();
+        }
+        currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+        renderCalendar(dateInput.value);
+      });
+
+      const themeSelect = document.getElementById("themeSelect");
+      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+      applyTheme(savedTheme);
+      themeSelect.addEventListener("change", (e) => {
+        applyTheme(e.target.value);
+      });
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        voiceBtn.style.display = "none";
+      } else {
+        let recognition = new SpeechRecognition();
+        let isRecording = false;
+        recognition.lang = "en-GB";
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onresult = (event) => {
+          let finalTranscript = "";
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const res = event.results[i];
+            if (res.isFinal) {
+              finalTranscript += res[0].transcript;
+            }
+          }
+          if (finalTranscript) {
+            textArea.value += (textArea.value ? " " : "") + finalTranscript.trim();
+            scheduleAutoSave();
+          }
+        };
+
+        recognition.onerror = () => {
+          isRecording = false;
+          const lang = localStorage.getItem(LANG_KEY) || "en";
+          voiceBtn.textContent = lang === "zh" ? "🎙️ 语音输入" : "🎙️ Dictate";
+        };
+
+        recognition.onend = () => {
+          if (isRecording) {
+            isRecording = false;
+            const lang = localStorage.getItem(LANG_KEY) || "en";
+            voiceBtn.textContent = lang === "zh" ? "🎙️ 语音输入" : "🎙️ Dictate";
+          }
+        };
+
+        function startDictation() {
+          recognition.start();
+          isRecording = true;
+          const lang = localStorage.getItem(LANG_KEY) || "en";
+          voiceBtn.textContent = lang === "zh" ? "⏹ 停止" : "⏹ Stop";
+        }
+
+        function stopDictation() {
+          recognition.stop();
+          isRecording = false;
+          const lang = localStorage.getItem(LANG_KEY) || "en";
+          voiceBtn.textContent = lang === "zh" ? "🎙️ 语音输入" : "🎙️ Dictate";
+        }
+
+        voiceBtn.addEventListener("click", () => {
+          if (isRecording) {
+            stopDictation();
+          } else {
+            startDictation();
+          }
+        });
+      }
+    }
+
+    /* ===== Password handling ===== */
+    function getStoredPassword() {
+      return localStorage.getItem(PASSWORD_KEY);
+    }
+
+    function setStoredPassword(password) {
+      localStorage.setItem(PASSWORD_KEY, password);
+    }
+
+    function setLockStatus(msg, isError = false) {
+      const el = document.getElementById("lockStatus");
+      el.textContent = msg;
+      el.classList.remove("error", "ok");
+      if (!msg) return;
+      el.classList.add(isError ? "error" : "ok");
+    }
+
+    function showSetupView() {
+      document.getElementById("setupView").style.display = "block";
+      document.getElementById("loginView").style.display = "none";
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+      const t = translations[lang] || translations.en;
+      document.getElementById("lockSubtitle").textContent = t.lockSetupSubtitle;
+      setLockStatus("");
+    }
+
+    function showLoginView() {
+      document.getElementById("setupView").style.display = "none";
+      document.getElementById("loginView").style.display = "block";
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+      const t = translations[lang] || translations.en;
+      document.getElementById("lockSubtitle").textContent = t.lockLoginSubtitle;
+      setLockStatus("");
+    }
+
+    function unlockDiary() {
+      const input = document.getElementById("loginPassword");
+      const entered = input.value || "";
+      const stored = getStoredPassword();
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+
+      if (!stored) {
+        setLockStatus(
+          lang === "zh" ? "尚未设置密码，请刷新页面再试。" : "No password is set. Please reload the page.",
+          true
+        );
+        return;
+      }
+
+      if (entered === stored) {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("appContainer").style.display = "block";
+        initDiaryApp();
+      } else {
+        setLockStatus(
+          lang === "zh" ? "密码错误，请重试。" : "Incorrect password. Please try again.",
+          true
+        );
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    function setupPassword() {
+      const p1 = document.getElementById("setupPassword").value || "";
+      const p2 = document.getElementById("setupPasswordConfirm").value || "";
+      const lang = localStorage.getItem(LANG_KEY) || "en";
+
+      if (!p1 || !p2) {
+        setLockStatus(
+          lang === "zh" ? "请填写两个密码字段。" : "Please fill in both password fields.",
+          true
+        );
+        return;
+      }
+      if (p1.length < 4) {
+        setLockStatus(
+          lang === "zh" ? "请使用至少 4 个字符的密码。" : "Please use at least 4 characters.",
+          true
+        );
+        return;
+      }
+      if (p1 !== p2) {
+        setLockStatus(
+          lang === "zh" ? "两次输入的密码不一致，请重试。" : "Passwords do not match. Please try again.",
+          true
+        );
+        return;
+      }
+
+      setStoredPassword(p1);
+      setLockStatus(
+        lang === "zh" ? "密码已保存，请使用该密码解锁日记。" : "Password saved. Please use it to unlock.",
+        false
+      );
+      showLoginView();
+    }
+
+    /* ===== Initial page setup ===== */
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+      applyTheme(savedTheme);
+
+      const savedLang = localStorage.getItem(LANG_KEY) || "en";
+      const langSelect = document.getElementById("langSelect");
+      if (langSelect) {
+        langSelect.value = savedLang;
+        langSelect.addEventListener("change", () => {
+          const lang = langSelect.value;
+          localStorage.setItem(LANG_KEY, lang);
+          applyLanguage(lang);
+          const storedPassword = getStoredPassword();
+          if (!storedPassword) {
+            showSetupView();
+          } else {
+            showLoginView();
+          }
+          const voiceBtn = document.getElementById("voiceBtn");
+          if (voiceBtn) {
+            voiceBtn.textContent = lang === "zh" ? "🎙️ 语音输入" : "🎙️ Dictate";
+          }
+        });
+      }
+      applyLanguage(savedLang);
+
+      const storedPassword = getStoredPassword();
+
+      document.getElementById("setupSaveBtn").addEventListener("click", setupPassword);
+      document.getElementById("loginBtn").addEventListener("click", unlockDiary);
+
+      document.getElementById("loginPassword").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          unlockDiary();
+        }
+      });
+
+      document.getElementById("setupPasswordConfirm").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          setupPassword();
+        }
+      });
+
+      if (!storedPassword) {
+        showSetupView();
+      } else {
+        showLoginView();
+      }
+    });
+
+    /* ===== PWA: register service worker ===== */
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("sw.js")
+          .catch(err => console.error("SW registration failed:", err));
+      });
+    }
+  </script>
+</body>
+</html>
